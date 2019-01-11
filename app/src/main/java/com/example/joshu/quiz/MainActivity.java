@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         buttonOverOns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), OverOns.class));
+                startActivity(new Intent(getApplicationContext(), OverOnsActivity.class));
             }
         });
 
@@ -29,7 +29,15 @@ public class MainActivity extends AppCompatActivity {
         buttonSpelregels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), spelregels.class));
+                startActivity(new Intent(getApplicationContext(), SpelregelsActivity.class));
+            }
+        });
+
+        Button buttonQuiz = (Button) findViewById(R.id.buttonQuiz);
+        buttonQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), QuizActivity.class));
             }
         });
     }

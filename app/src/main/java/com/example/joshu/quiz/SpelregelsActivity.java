@@ -3,7 +3,7 @@ package com.example.joshu.quiz;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class spelregels extends AppCompatActivity {
+public class SpelregelsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
