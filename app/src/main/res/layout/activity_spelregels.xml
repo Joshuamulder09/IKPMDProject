@@ -6,4 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".SpelregelsActivity">
 
+    <TextView
+        android:id="@+id/Spelregels"
+        android:layout_width="356dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="De spelregels"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/SpelregelsText"
+        android:layout_width="356dp"
+        android:layout_height="372dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Welkom bij de quiz! Dit is een quiz om je studie te verbeteren, je kunt met de quiz vragen toevoegen en veranderen zodat je beter voorbereidt bent voor toetsen. Hoe werkt het? Je krijgt vragen voorgeschoteld die zelf gemaakt zijn. Direct na het beantwoorden van elke vraag zie je het goede antwoord. Aan het einde van de quiz krijg je je totaalscore te zien. Veel succes (en niet spieken)!"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
 </android.support.constraint.ConstraintLayout>

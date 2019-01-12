@@ -27,6 +27,7 @@ public class QuizActivity extends AppCompatActivity {
     TextView t1_question, timerTxt;
     int total = 0;
     int correct = 0;
+    int points = 0;
     DatabaseReference reference;
     int wrong = 0;
 
@@ -41,7 +42,7 @@ public class QuizActivity extends AppCompatActivity {
 
         t1_question = (TextView) findViewById(R.id.questionsTxt);
         timerTxt = (TextView) findViewById(R.id.timerTxt);
-
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true); //ofline opslaan
         updateQuestion();
         reverseTimer(30, timerTxt);
     }
@@ -49,12 +50,13 @@ public class QuizActivity extends AppCompatActivity {
     private void updateQuestion() {
         total++;
         if (total > 4) {
-                    total--;
-                    Intent i = new Intent(QuizActivity.this, ResultActivity.class);
-                    i.putExtra("total",String.valueOf(total));
-                    i.putExtra("correct",String.valueOf(correct));
-                    i.putExtra("incorrect",String.valueOf(wrong));
-                    startActivity(i);
+            total--;
+            Intent i = new Intent(QuizActivity.this, ResultActivity.class);
+            i.putExtra("total", String.valueOf(total));
+            i.putExtra("correct", String.valueOf(correct));
+            i.putExtra("incorrect", String.valueOf(wrong));
+            i.putExtra("points", String.valueOf(points));
+            startActivity(i);
         } else {
             reference = FirebaseDatabase.getInstance().getReference().child("Questions").child(String.valueOf(total));
             reference.addValueEventListener(new ValueEventListener() {
@@ -70,41 +72,34 @@ public class QuizActivity extends AppCompatActivity {
                     b1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (b1.getText().toString().equals(question.getAnswer()))
-                            {
+                            if (b1.getText().toString().equals(question.getAnswer())) {
                                 b1.setBackgroundColor(Color.GREEN);
-                                Handler handler = new Handler();
 
+                                Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
                                         correct++;
+                                        points = points + 15;
                                         b1.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         updateQuestion();
                                     }
                                 }, 1500);
-                            }
-                            else
-                            {
+                            } else {
                                 // answer is wrong ... we will find the correct answer, and make it green
                                 wrong++;
+                                points = points - 5;
                                 b1.setBackgroundColor(Color.RED);
 
-                                if(b2.getText().toString().equals(question.getAnswer()))
-                                {
+                                if (b2.getText().toString().equals(question.getAnswer())) {
                                     b2.setBackgroundColor(Color.GREEN);
-                                }
-                                else if(b3.getText().toString().equals(question.getAnswer()))
-                                {
+                                } else if (b3.getText().toString().equals(question.getAnswer())) {
                                     b3.setBackgroundColor(Color.GREEN);
-                                }
-                                else if(b4.getText().toString().equals(question.getAnswer()))
-                                {
+                                } else if (b4.getText().toString().equals(question.getAnswer())) {
                                     b4.setBackgroundColor(Color.GREEN);
                                 }
 
                                 Handler handler = new Handler();
-
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
@@ -112,11 +107,9 @@ public class QuizActivity extends AppCompatActivity {
                                         b2.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         b3.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         b4.setBackgroundColor(Color.parseColor("#03A9F4"));
-
                                         updateQuestion();
                                     }
                                 }, 1500);
-
 
 
                             }
@@ -126,41 +119,34 @@ public class QuizActivity extends AppCompatActivity {
                     b2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (b2.getText().toString().equals(question.getAnswer()))
-                            {
+                            if (b2.getText().toString().equals(question.getAnswer())) {
                                 b2.setBackgroundColor(Color.GREEN);
-                                Handler handler = new Handler();
 
+                                Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
                                         correct++;
+                                        points = points + 15;
                                         b2.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         updateQuestion();
                                     }
                                 }, 1500);
-                            }
-                            else
-                            {
+                            } else {
                                 // answer is wrong ... we will find the correct answer, and make it green
                                 wrong++;
+                                points = points - 5;
                                 b2.setBackgroundColor(Color.RED);
 
-                                if(b1.getText().toString().equals(question.getAnswer()))
-                                {
+                                if (b1.getText().toString().equals(question.getAnswer())) {
                                     b2.setBackgroundColor(Color.GREEN);
-                                }
-                                else if(b3.getText().toString().equals(question.getAnswer()))
-                                {
+                                } else if (b3.getText().toString().equals(question.getAnswer())) {
                                     b3.setBackgroundColor(Color.GREEN);
-                                }
-                                else if(b4.getText().toString().equals(question.getAnswer()))
-                                {
+                                } else if (b4.getText().toString().equals(question.getAnswer())) {
                                     b4.setBackgroundColor(Color.GREEN);
                                 }
 
                                 Handler handler = new Handler();
-
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
@@ -168,11 +154,9 @@ public class QuizActivity extends AppCompatActivity {
                                         b2.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         b3.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         b4.setBackgroundColor(Color.parseColor("#03A9F4"));
-
                                         updateQuestion();
                                     }
                                 }, 1500);
-
 
 
                             }
@@ -182,41 +166,34 @@ public class QuizActivity extends AppCompatActivity {
                     b3.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (b3.getText().toString().equals(question.getAnswer()))
-                            {
+                            if (b3.getText().toString().equals(question.getAnswer())) {
                                 b3.setBackgroundColor(Color.GREEN);
-                                Handler handler = new Handler();
 
+                                Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
                                         correct++;
+                                        points = points + 15;
                                         b3.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         updateQuestion();
                                     }
                                 }, 1500);
-                            }
-                            else
-                            {
+                            } else {
                                 // answer is wrong ... we will find the correct answer, and make it green
                                 wrong++;
+                                points = points - 5;
                                 b3.setBackgroundColor(Color.RED);
 
-                                if(b1.getText().toString().equals(question.getAnswer()))
-                                {
+                                if (b1.getText().toString().equals(question.getAnswer())) {
                                     b1.setBackgroundColor(Color.GREEN);
-                                }
-                                else if(b2.getText().toString().equals(question.getAnswer()))
-                                {
+                                } else if (b2.getText().toString().equals(question.getAnswer())) {
                                     b2.setBackgroundColor(Color.GREEN);
-                                }
-                                else if(b4.getText().toString().equals(question.getAnswer()))
-                                {
+                                } else if (b4.getText().toString().equals(question.getAnswer())) {
                                     b4.setBackgroundColor(Color.GREEN);
                                 }
 
                                 Handler handler = new Handler();
-
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
@@ -224,11 +201,9 @@ public class QuizActivity extends AppCompatActivity {
                                         b2.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         b3.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         b4.setBackgroundColor(Color.parseColor("#03A9F4"));
-
                                         updateQuestion();
                                     }
                                 }, 1500);
-
 
 
                             }
@@ -238,41 +213,34 @@ public class QuizActivity extends AppCompatActivity {
                     b4.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (b4.getText().toString().equals(question.getAnswer()))
-                            {
+                            if (b4.getText().toString().equals(question.getAnswer())) {
                                 b4.setBackgroundColor(Color.GREEN);
-                                Handler handler = new Handler();
 
+                                Handler handler = new Handler();
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
                                         correct++;
+                                        points = points + 15;
                                         b4.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         updateQuestion();
                                     }
                                 }, 1500);
-                            }
-                            else
-                            {
+                            } else {
                                 // answer is wrong ... we will find the correct answer, and make it green
                                 wrong++;
+                                points = points - 5;
                                 b4.setBackgroundColor(Color.RED);
 
-                                if(b1.getText().toString().equals(question.getAnswer()))
-                                {
+                                if (b1.getText().toString().equals(question.getAnswer())) {
                                     b1.setBackgroundColor(Color.GREEN);
-                                }
-                                else if(b2.getText().toString().equals(question.getAnswer()))
-                                {
+                                } else if (b2.getText().toString().equals(question.getAnswer())) {
                                     b2.setBackgroundColor(Color.GREEN);
-                                }
-                                else if(b3.getText().toString().equals(question.getAnswer()))
-                                {
+                                } else if (b3.getText().toString().equals(question.getAnswer())) {
                                     b3.setBackgroundColor(Color.GREEN);
                                 }
 
                                 Handler handler = new Handler();
-
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
@@ -280,11 +248,9 @@ public class QuizActivity extends AppCompatActivity {
                                         b2.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         b3.setBackgroundColor(Color.parseColor("#03A9F4"));
                                         b4.setBackgroundColor(Color.parseColor("#03A9F4"));
-
                                         updateQuestion();
                                     }
                                 }, 1500);
-
 
 
                             }
@@ -301,9 +267,9 @@ public class QuizActivity extends AppCompatActivity {
             });
         }
     }
-    public void reverseTimer(int seconds, final TextView tv)
-    {
-        new CountDownTimer(seconds * 1000 + 1000, 10000) {
+
+    public void reverseTimer(int seconds, final TextView tv) {
+        new CountDownTimer(seconds * 1000 + 1000, 1000) {
             public void onTick(long millisUntilFinished) {
                 int seconds = (int) (millisUntilFinished / 1000);
                 int minutes = seconds / 60;
@@ -314,10 +280,11 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 tv.setText("Completed");
-                Intent myIntent = new Intent(QuizActivity.this,ResultActivity.class);
-                myIntent.putExtra("total",String.valueOf(total));
-                myIntent.putExtra("correct",String.valueOf(correct));
-                myIntent.putExtra("incorrect",String.valueOf(wrong));
+                Intent myIntent = new Intent(QuizActivity.this, ResultActivity.class);
+                myIntent.putExtra("total", String.valueOf(total));
+                myIntent.putExtra("correct", String.valueOf(correct));
+                myIntent.putExtra("incorrect", String.valueOf(wrong));
+                myIntent.putExtra("points", String.valueOf(points));
                 startActivity(myIntent);
             }
         }.start();
