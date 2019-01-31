@@ -3,6 +3,8 @@ package com.example.joshu.quiz;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
@@ -29,5 +31,11 @@ public class ResultActivity extends AppCompatActivity {
         t2.setText(correct);
         t3.setText(wrong);
         t4.setText(points);
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

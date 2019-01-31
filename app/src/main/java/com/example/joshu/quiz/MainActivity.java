@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonChangeQuiz = (Button) findViewById(R.id.buttonChangeQuiz);
+        buttonChangeQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Quiz.class));
+            }
+        });
+
         Button buttonQuiz = (Button) findViewById(R.id.buttonQuiz);
         buttonQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,5 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), QuizActivity.class));
             }
         });
+
+
+
     }
 }

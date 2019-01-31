@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.joshu.quiz">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,7 +21,10 @@
         <activity android:name=".OverOnsActivity" />
         <activity android:name=".SpelregelsActivity" />
         <activity android:name=".QuizActivity" />
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".MakeQuiz" />
+        <activity android:name=".Quiz" />
+        <activity android:name=".ChangeQuestionsActivity"></activity>
     </application>
 
 </manifest>
