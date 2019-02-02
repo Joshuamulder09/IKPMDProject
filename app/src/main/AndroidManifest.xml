@@ -24,7 +24,8 @@
         <activity android:name=".ResultActivity" />
         <activity android:name=".MakeQuiz" />
         <activity android:name=".Quiz" />
-        <activity android:name=".ChangeQuestionsActivity"></activity>
+        <activity android:name=".ChangeQuestionsActivity" />
+        <activity android:name=".NewQuestionActivity"></activity>
     </application>
 
 </manifest>
