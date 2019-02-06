@@ -35,14 +35,16 @@ public class FirebaseDatabaseHelper {
         mReferenceQuestions.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                questions.clear(); //clrea list of questions from old data
-                List<String> keys = new ArrayList<>();
-                for (DataSnapshot keyNode : dataSnapshot.getChildren()) { //loopen door key values
-                    keys.add(keyNode.getKey()); //opslaan aan de keys list
-                    Question question = keyNode.getValue(Question.class);
-                    questions.add(question);
-                }
-                dataStatus.DataIsLoaded(questions, keys);
+
+                    questions.clear(); //clrea list of questions from old data
+                    List<String> keys = new ArrayList<>();
+                    for (DataSnapshot keyNode : dataSnapshot.getChildren()) { //loopen door key values
+                        keys.add(keyNode.getKey()); //opslaan aan de keys list
+                        Question question = keyNode.getValue(Question.class);
+                        questions.add(question);
+                    }
+                    dataStatus.DataIsLoaded(questions, keys);
+
             }
 
             @Override
@@ -61,7 +63,7 @@ public class FirebaseDatabaseHelper {
         });
     }
     public void deleteQuestion(String key, final DataStatus dataStatus) {
-        mReferenceQuestions.setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
+        mReferenceQuestions.getRef().setValue(null).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 dataStatus.DataIsDeleted();

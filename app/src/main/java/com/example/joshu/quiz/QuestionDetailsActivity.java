@@ -1,5 +1,6 @@
 package com.example.joshu.quiz;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -125,5 +126,10 @@ public class QuestionDetailsActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish(); return;
+    }
 
 }

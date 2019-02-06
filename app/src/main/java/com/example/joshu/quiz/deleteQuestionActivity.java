@@ -48,20 +48,29 @@ public class deleteQuestionActivity extends AppCompatActivity {
                     @Override
                     public void DataIsDeleted() {
                         Toast.makeText(deleteQuestionActivity.this, "Alle vragen zijn verwijderd!!", Toast.LENGTH_LONG).show();
-                        finish(); return;
+                        finish();
+                        return;
                     }
                 });
+
             }
+
         });
 
         mTerug_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                finish(); return;
+                finish();
+                return;
             }
         });
 
 
+    }
 
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
+        return;
     }
 }

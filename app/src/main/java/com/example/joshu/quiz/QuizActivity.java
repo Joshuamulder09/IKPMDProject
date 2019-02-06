@@ -54,12 +54,12 @@ public class QuizActivity extends AppCompatActivity {
         b3.setEnabled(true);
         b4.setEnabled(true);
         reference = FirebaseDatabase.getInstance().getReference().child("Questions");
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists())
+                if (dataSnapshot.exists()) {
                     maxVragen = (dataSnapshot.getChildrenCount());
-
+                }
                 total++;
 
                 if (total > maxVragen) {
@@ -70,12 +70,13 @@ public class QuizActivity extends AppCompatActivity {
                     i.putExtra("incorrect", String.valueOf(wrong));
                     i.putExtra("points", String.valueOf(points));
                     startActivity(i);
-
-                } else {
+                }
+                 else {
                     reference = FirebaseDatabase.getInstance().getReference().child("Questions").child(String.valueOf(total)); //vragen doorlopen database
                     reference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.exists()) {
                             final Question question = dataSnapshot.getValue(Question.class);
                             t1_question.setText(question.getQuestion());
 
@@ -286,7 +287,7 @@ public class QuizActivity extends AppCompatActivity {
                                 }
                             });
 
-
+                        }
                         }
 
                         @Override

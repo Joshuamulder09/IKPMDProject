@@ -1,5 +1,6 @@
 package com.example.joshu.quiz;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,8 +47,9 @@ public class NewQuestionActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists())
+                if (dataSnapshot.exists()) {
                     maxid = (dataSnapshot.getChildrenCount());
+                }
             }
 
             @Override
@@ -69,7 +71,7 @@ public class NewQuestionActivity extends AppCompatActivity {
                 question.setOption4(mOption4_editTxt.getText().toString());
                 reference.child(String.valueOf(maxid + 1)).setValue(question);
                 Toast.makeText(NewQuestionActivity.this, maxid + " Vraag toegevoegd aan database", Toast.LENGTH_LONG).show();
-
+                finish();return;
             }
         });
 
@@ -82,6 +84,11 @@ public class NewQuestionActivity extends AppCompatActivity {
         });
 
 
+    }
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish(); return;
     }
 
 }
