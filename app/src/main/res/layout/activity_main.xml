@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <Button
-        android:id="@+id/buttonChangeQuiz"
+        android:id="@+id/buttonVragen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

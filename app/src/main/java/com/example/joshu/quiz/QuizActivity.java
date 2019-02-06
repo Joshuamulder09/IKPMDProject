@@ -41,9 +41,10 @@ public class QuizActivity extends AppCompatActivity {
         b4 = (Button) findViewById(R.id.buton4);
 
         t1_question = (TextView) findViewById(R.id.questionsTxt);
-        timerTxt = (TextView) findViewById(R.id.timerTxt);
+//        timerTxt = (TextView) findViewById(R.id.timerTxt);
         updateQuestion();
-        reverseTimer(30, timerTxt);
+
+//        reverseTimer(30, timerTxt);
     }
 
 
@@ -58,11 +59,10 @@ public class QuizActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists())
                     maxVragen = (dataSnapshot.getChildrenCount());
+
                 total++;
 
-
                 if (total > maxVragen) {
-                    finish();
                     total--;
                     Intent i = new Intent(QuizActivity.this, ResultActivity.class);
                     i.putExtra("total", String.valueOf(total));
@@ -282,8 +282,6 @@ public class QuizActivity extends AppCompatActivity {
                                                 updateQuestion();
                                             }
                                         }, 1500);
-
-
                                     }
                                 }
                             });
@@ -306,30 +304,33 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
-    public void reverseTimer(int seconds, final TextView tv) {
-        new CountDownTimer(seconds * 1000 + 1000, 1000) {
-            public void onTick(long millisUntilFinished) {
-                int seconds = (int) (millisUntilFinished / 1000);
-                int minutes = seconds / 60;
-                seconds = seconds % 60;
-                tv.setText(String.format("%02d", minutes) + ":" + String.format("%02d", seconds));
-            }
-
-            @Override
-            public void onFinish() {
-                tv.setText("Completed");
-                Intent myIntent = new Intent(QuizActivity.this, ResultActivity.class);
-                myIntent.putExtra("total", String.valueOf(total));
-                myIntent.putExtra("correct", String.valueOf(correct));
-                myIntent.putExtra("incorrect", String.valueOf(wrong));
-                myIntent.putExtra("points", String.valueOf(points));
-                startActivity(myIntent);
-            }
-        }.start();
-    }
+//    public void reverseTimer(int seconds, final TextView tv) {
+//
+//        new CountDownTimer(seconds * 1000 + 1000, 1000) {
+//            public void onTick(long millisUntilFinished) {
+//                int seconds = (int) (millisUntilFinished / 1000);
+//                int minutes = seconds / 60;
+//                seconds = seconds % 60;
+//                tv.setText(String.format("%02d", minutes) + ":" + String.format("%02d", seconds));
+//            }
+//
+//
+//            @Override
+//            public void onFinish() {
+//                tv.setText("Completed");
+//                Intent myIntent = new Intent(QuizActivity.this, ResultActivity.class);
+//                myIntent.putExtra("total", String.valueOf(total));
+//                myIntent.putExtra("correct", String.valueOf(correct));
+//                myIntent.putExtra("incorrect", String.valueOf(wrong));
+//                myIntent.putExtra("points", String.valueOf(points));
+//                startActivity(myIntent);
+//            }
+//        }.start();
+//    }
 
     @Override
     public void onBackPressed() {
         startActivity(new Intent(this, MainActivity.class));
+        finish(); return;
     }
 }
