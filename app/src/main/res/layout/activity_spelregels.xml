@@ -1,45 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SpelregelsActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:clipToPadding="false"
+xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+
+<android.support.v7.widget.CardView
+    android:padding="5dp"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
+    android:layout_width="300dp"
+    android:layout_height="285dp"
+    card_view:cardCornerRadius="2dp"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10sp"
+    card_view:cardElevation="15dp">
 
     <TextView
-        android:id="@+id/Spelregels"
-        android:layout_width="356dp"
-        android:layout_height="74dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
-        android:text="De spelregels"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:id="@+id/textv"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:padding="8dp"
+        android:text="Welkom bij de quiz! Dit is een quiz om je studie te verbeteren, je kunt met de quiz vragen toevoegen en veranderen zodat je beter voorbereidt bent voor toetsen. Hoe werkt het? Je krijgt vragen voorgeschoteld die zelf gemaakt zijn. Direct na het beantwoorden van elke vraag zie je het goede antwoord. Aan het einde van de quiz krijg je je totaalscore te zien. Veel succes (en niet spieken)! Voor elke goed beantwoordde vraag krijg je 15 punten en bij elk fout beantwoordde vraag gaan er 5 punten van af!!"
+        android:textSize="16sp" />
+</android.support.v7.widget.CardView>
 
     <TextView
-        android:id="@+id/SpelregelsText"
-        android:layout_width="356dp"
-        android:layout_height="372dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Welkom bij de quiz! Dit is een quiz om je studie te verbeteren, je kunt met de quiz vragen toevoegen en veranderen zodat je beter voorbereidt bent voor toetsen. Hoe werkt het? Je krijgt vragen voorgeschoteld die zelf gemaakt zijn. Direct na het beantwoorden van elke vraag zie je het goede antwoord. Aan het einde van de quiz krijg je je totaalscore te zien. Veel succes (en niet spieken)!"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79" />
-</android.support.constraint.ConstraintLayout>
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
+        android:textAlignment="center"
+        android:text="Spelregels"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+</RelativeLayout>

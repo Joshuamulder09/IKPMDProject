@@ -101,7 +101,7 @@ public class QuizActivity extends AppCompatActivity {
                                             public void run() {
                                                 correct++;
                                                 points = points + 15;
-                                                b1.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                                b1.setBackgroundColor(Color.parseColor("#D81B60"));
                                                 updateQuestion();
                                             }
                                         }, 1500);
@@ -123,10 +123,10 @@ public class QuizActivity extends AppCompatActivity {
                                         handler.postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
-                                                b1.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b2.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b3.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b4.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                                b1.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b2.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b3.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b4.setBackgroundColor(Color.parseColor("#D81B60"));
                                                 updateQuestion();
                                             }
                                         }, 1500);
@@ -152,7 +152,7 @@ public class QuizActivity extends AppCompatActivity {
                                             public void run() {
                                                 correct++;
                                                 points = points + 15;
-                                                b2.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                                b2.setBackgroundColor(Color.parseColor("#D81B60"));
                                                 updateQuestion();
                                             }
                                         }, 1500);
@@ -174,10 +174,10 @@ public class QuizActivity extends AppCompatActivity {
                                         handler.postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
-                                                b1.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b2.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b3.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b4.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                                b1.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b2.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b3.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b4.setBackgroundColor(Color.parseColor("#D81B60"));
                                                 updateQuestion();
                                             }
                                         }, 1500);
@@ -203,7 +203,7 @@ public class QuizActivity extends AppCompatActivity {
                                             public void run() {
                                                 correct++;
                                                 points = points + 15;
-                                                b3.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                                b3.setBackgroundColor(Color.parseColor("#D81B60"));
                                                 updateQuestion();
                                             }
                                         }, 1500);
@@ -225,10 +225,10 @@ public class QuizActivity extends AppCompatActivity {
                                         handler.postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
-                                                b1.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b2.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b3.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b4.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                                b1.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b2.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b3.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b4.setBackgroundColor(Color.parseColor("#D81B60"));
                                                 updateQuestion();
                                             }
                                         }, 1500);
@@ -254,7 +254,7 @@ public class QuizActivity extends AppCompatActivity {
                                             public void run() {
                                                 correct++;
                                                 points = points + 15;
-                                                b4.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                                b4.setBackgroundColor(Color.parseColor("#D81B60"));
                                                 updateQuestion();
                                             }
                                         }, 1500);
@@ -276,10 +276,10 @@ public class QuizActivity extends AppCompatActivity {
                                         handler.postDelayed(new Runnable() {
                                             @Override
                                             public void run() {
-                                                b1.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b2.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b3.setBackgroundColor(Color.parseColor("#03A9F4"));
-                                                b4.setBackgroundColor(Color.parseColor("#03A9F4"));
+                                                b1.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b2.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b3.setBackgroundColor(Color.parseColor("#D81B60"));
+                                                b4.setBackgroundColor(Color.parseColor("#D81B60"));
                                                 updateQuestion();
                                             }
                                         }, 1500);

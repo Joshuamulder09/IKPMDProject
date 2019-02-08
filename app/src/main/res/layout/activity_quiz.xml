@@ -32,29 +32,29 @@
             >
 
             <Button
-                android:layout_width="0dp"
                 android:id="@+id/buton1"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#03A9F4"
-                android:padding="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:text="OPTION 1"
-                />
-            <Button
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_weight="1"
+                android:background="#D81B60"
+                android:padding="10dp"
+                android:text="OPTION 1"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <Button
                 android:id="@+id/buton2"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#03A9F4"
+                android:layout_marginRight="12dp"
+                android:background="#D81B60"
                 android:padding="10dp"
-                android:textAlignment="center"
-                android:textSize="20sp"
                 android:text="OPTION 2"
-                />
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
 
 
@@ -67,29 +67,30 @@
             android:orientation="horizontal">
 
             <Button
-                android:layout_width="0dp"
                 android:id="@+id/buton3"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#03A9F4"
-                android:padding="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:text="OPTION 3"
-                />
-            <Button
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="#D81B60"
+                android:padding="10dp"
+                android:text="OPTION 3"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <Button
                 android:id="@+id/buton4"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#03A9F4"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="17dp"
+                android:background="#D81B60"
                 android:padding="10dp"
-                android:textAlignment="center"
-                android:textSize="20sp"
                 android:text="OPTION 4"
-                />
+                android:textAlignment="center"
+                android:textSize="20sp" />
 
         </LinearLayout>
 

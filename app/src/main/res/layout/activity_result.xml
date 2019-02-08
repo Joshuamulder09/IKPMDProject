@@ -14,36 +14,34 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="37dp"
         android:layout_marginTop="79dp"
-        android:text="Total questions" />
+        android:text="Totaal aantal vragen" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView"
         android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
         android:layout_marginTop="105dp"
-        android:text="Correct answers" />
+        android:text="Juiste antwoorden" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/textView2"
-        android:layout_marginLeft="11dp"
+        android:layout_alignLeft="@+id/textView2"
         android:layout_marginTop="106dp"
-        android:text="Wrong answers" />
+        android:text="Foute antwoorden" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
         android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
         android:layout_marginTop="106dp"
-        android:layout_marginLeft="11dp"
-        android:text="Points" />
+        android:text="Aantal punten behaald" />
 
     <TextView
         android:id="@+id/textView4"

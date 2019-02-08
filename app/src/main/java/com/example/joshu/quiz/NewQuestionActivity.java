@@ -26,6 +26,15 @@ public class NewQuestionActivity extends AppCompatActivity {
     private Button mAdd_btn;
     private Button mBack_btn;
     DatabaseReference reference;
+
+    private String sCheckQuestion;
+    private String sCheckAnswer;
+    private String sCheckOption1;
+    private String sCheckOption2;
+    private String sCheckOption3;
+    private String sCheckOption4;
+
+
     long maxid = 0;
 
     @Override
@@ -42,6 +51,7 @@ public class NewQuestionActivity extends AppCompatActivity {
 
         mAdd_btn = (Button) findViewById(R.id.update_btn);
         mBack_btn = (Button) findViewById(R.id.back_btn);
+
 
         reference = FirebaseDatabase.getInstance().getReference().child("Questions");
         reference.addValueEventListener(new ValueEventListener() {
@@ -61,17 +71,56 @@ public class NewQuestionActivity extends AppCompatActivity {
         mAdd_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sCheckQuestion = mQuestion_editTxt.getText().toString();
+                if (sCheckQuestion.matches("")) {
+                    Toast.makeText(NewQuestionActivity.this,"Je bent vergeten een vraag toe te voegen", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                sCheckAnswer = mAnswer_editTxt.getText().toString();
+                if (sCheckAnswer.matches("")) {
+                    Toast.makeText(NewQuestionActivity.this,"Je bent vergeten een aantwoord toe te voegen", Toast.LENGTH_LONG).show();
+                    return;
+                }
 
-                Question question = new Question();
-                question.setQuestion(mQuestion_editTxt.getText().toString());
-                question.setAnswer(mAnswer_editTxt.getText().toString());
-                question.setOption1(mOption1_editTxt.getText().toString());
-                question.setOption2(mOption2_editTxt.getText().toString());
-                question.setOption3(mOption3_editTxt.getText().toString());
-                question.setOption4(mOption4_editTxt.getText().toString());
-                reference.child(String.valueOf(maxid + 1)).setValue(question);
-                Toast.makeText(NewQuestionActivity.this, maxid + " Vraag toegevoegd aan database", Toast.LENGTH_LONG).show();
-                finish();return;
+                sCheckOption1 = mOption1_editTxt.getText().toString();
+                if (sCheckOption1.matches("")) {
+                    Toast.makeText(NewQuestionActivity.this,"Je bent vergeten optie 1 toe te voegen", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                sCheckOption2 = mOption2_editTxt.getText().toString();
+                if (sCheckOption2.matches("")) {
+                    Toast.makeText(NewQuestionActivity.this,"Je bent vergeten optie 2 toe te voegen", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                sCheckOption3 = mOption3_editTxt.getText().toString();
+                if (sCheckOption3.matches("")) {
+                    Toast.makeText(NewQuestionActivity.this,"Je bent vergeten optie 3 toe te voegen", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                sCheckOption4 = mOption4_editTxt.getText().toString();
+                if (sCheckOption4.matches("")) {
+                    Toast.makeText(NewQuestionActivity.this,"Je bent vergeten optie 4 toe te voegen", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if (sCheckAnswer.matches(sCheckOption1) || sCheckAnswer.matches(sCheckOption2) || sCheckAnswer.matches(sCheckOption3) || sCheckAnswer.matches(sCheckOption4)) {
+
+
+                    Question question = new Question();
+                    question.setQuestion(mQuestion_editTxt.getText().toString());
+                    question.setAnswer(mAnswer_editTxt.getText().toString());
+                    question.setOption1(mOption1_editTxt.getText().toString());
+                    question.setOption2(mOption2_editTxt.getText().toString());
+                    question.setOption3(mOption3_editTxt.getText().toString());
+                    question.setOption4(mOption4_editTxt.getText().toString());
+                    reference.child(String.valueOf(maxid + 1)).setValue(question);
+                    Toast.makeText(NewQuestionActivity.this,  " Vraag " + (maxid + 1) + " toegevoegd aan database", Toast.LENGTH_LONG).show();
+                    finish();
+                    return;
+                } else {
+                    Toast.makeText(NewQuestionActivity.this,"Antwoord komt niet overeen met 1 van de opties", Toast.LENGTH_LONG).show();
+                    return;
+                }
             }
         });
 
