@@ -15,6 +15,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,7 +26,8 @@
         <activity android:name=".ChangeQuestionsActivity" />
         <activity android:name=".NewQuestionActivity" />
         <activity android:name=".QuestionDetailsActivity" />
-        <activity android:name=".deleteQuestionActivity"></activity>
+        <activity android:name=".deleteQuestionActivity" />
+        <activity android:name=".RateAppActivity"></activity>
     </application>
 
 </manifest>

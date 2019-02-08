@@ -1,7 +1,7 @@
 package com.example.joshu.quiz.Model;
 
 public class Question {
-    public String question,option1,option2,option3,option4,answer;
+    public String question, option1, option2, option3, option4, answer;
 
     public Question(String question, String option1, String option2, String option3, String option4, String answer) {
         this.question = question;
@@ -12,7 +12,8 @@ public class Question {
         this.answer = answer;
     }
 
-    public Question() { }
+    public Question() {
+    }
 
     public String getQuestion() {
         return question;

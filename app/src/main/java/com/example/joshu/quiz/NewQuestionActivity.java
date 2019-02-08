@@ -104,8 +104,6 @@ public class NewQuestionActivity extends AppCompatActivity {
                 }
 
                 if (sCheckAnswer.matches(sCheckOption1) || sCheckAnswer.matches(sCheckOption2) || sCheckAnswer.matches(sCheckOption3) || sCheckAnswer.matches(sCheckOption4)) {
-
-
                     Question question = new Question();
                     question.setQuestion(mQuestion_editTxt.getText().toString());
                     question.setAnswer(mAnswer_editTxt.getText().toString());

@@ -49,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button buttonRateApp = (Button) findViewById(R.id.buttonRateApp);
+        buttonRateApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), RateAppActivity.class));
+            }
+        });
 
 
     }
